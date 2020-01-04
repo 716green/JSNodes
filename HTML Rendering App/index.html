@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>JS Live HTML Rendering</title>
+        <style>
+            .main-header {
+                text-align: center;
+            }
+
+            #renderedCode {
+                height: 250px;
+                width: 100%;
+                border: thin solid black;
+                padding: 20px;
+
+            }
+
+            textarea {
+                background: lightgray;
+                height: 250px;
+                width: 100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <body>
+            <h1 class="main-header">JS Live HTML Rendering</h1>
+
+            <h2>Code</h2>
+            <textarea id="code"></textarea>
+
+            <h2>Output</h2>
+            <div id="renderedCode"></div>
+            <script>
+                document.querySelector('#code').addEventListener('keyup', function(e) {
+                    if (e.target.value.endsWith("<") || e.target.value.endsWith("/")) {
+                        return;
+                    }
+                    document.querySelector("#renderedCode").innerHTML = document.querySelector("#code").value;
+                });
+            </script>
+    </body>
+</html>

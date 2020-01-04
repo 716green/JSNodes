@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>JS Fiddle Clone</title>
+        <style>
+            .main-header {
+                text-align: center;
+            }
+
+            #renderedCode {
+                height: 250px;
+                width: 100%;
+                border: thin solid black;
+                padding: 20px;
+            }
+
+            textarea {
+                background: lightgray;
+                height: 250px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+            <h1 class="main-header">JS Fiddle Clone</h1>
+
+            <h2>Code</h2>
+            <textarea id="code"></textarea>
+
+            <h2>Output</h2>
+            <div id="renderedCode"></div>
+
+            <button id="fire">Render</button>
+
+            <script>
+                document.querySelector('#fire').addEventListener('click', function() {
+                    document.querySelector("#renderedCode").innerHTML = document.querySelector("#code").value;
+                });
+            </script>
+    </body>
+</html>
